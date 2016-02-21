@@ -1,0 +1,17 @@
+<!--?xml version="1.0"? -->
+
+<hibernate-mapping package="com.tobuy.domain">
+	<class name="Product" table="Products">
+		<id name="productId" column="product_id">
+			<generator class="native">
+			</generator>
+		</id>
+		<property name="name" column="name"></property>
+
+		<many-to-one name="productList" class="ProductList" fetch="select">
+			<column name="product_list_id" not-null="true" />
+		</many-to-one>
+	</class>
+
+
+</hibernate-mapping>
